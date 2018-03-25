@@ -1,0 +1,32 @@
+﻿body {
+  background: url("../Content/1.png") no-repeat center center fixed;
+  background-size: cover; }
+
+.bg-custom {
+  background-color: none !important; }
+
+.headlines {
+  font-family: 'Titillium Web', sans-serif; }
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff !important;
+  font-family: 'Titillium Web', sans-serif; }
+
+.text {
+  color: #000;
+  font-family: 'Titillium Web', sans-serif; }
+
+.headlines-color {
+  color: #BD6689; }
+
+.umb-grid h1 {
+  color: #BC6790 !important;
+  font-family: 'Titillium Web', sans-serif; }
+
+.umb-grid span {
+  color: #000 !important;
+  font-family: 'Titillium Web', sans-serif; }
+
+textarea {
+  background-color: transparent; }
+

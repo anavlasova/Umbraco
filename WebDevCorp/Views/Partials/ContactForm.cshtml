@@ -1,0 +1,52 @@
+﻿@model WebDevCorp.ViewModels.ContactForm
+@{
+    Layout = null;
+}
+
+<main class="pa4 black-80">
+    @if (TempData["success"] == null)
+    {
+        using (Html.BeginUmbracoForm("HandleFormSubmit", "Contact", new object { }, new { @class = "measure center" }))
+        {
+            <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+                <legend class="f4 fw6 ph0 mh0">Contact Us!</legend>
+                <div class="mt3">
+                    @Html.LabelFor(m => m.Name, new { @class = "db fw6 lh-copy f6" })
+                    @Html.TextBoxFor(m => m.Name, new { @class = "pa2 input-reset ba bg-transparent hover-bg-black hover-black w-100", placeholder = "Name" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+
+                <div class="mv3">
+                    @Html.LabelFor(m => m.Email, new { @class = "db fw6 lh-copy f6" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "pa2 input-reset ba bg-transparent hover-bg-black hover-black w-100", placeholder = "Email address" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+
+                <div class="mv3">
+
+                    @Html.LabelFor(m => m.Subject, new { @class = "db fw6 lh-copy f6" })
+                    @Html.TextBoxFor(m => m.Subject, new { @class = "pa2 input-reset ba bg-transparent hover-bg-black hover-black w-100", placeholder = "Subject" })
+                    @Html.ValidationMessageFor(m => m.Subject)
+                </div>
+
+                <div class="mv3">
+
+                    @Html.LabelFor(m => m.Message, new { @class = "db fw6 lh-copy f6" })
+                    @Html.TextAreaFor(m => m.Message, new { @class = "db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2", placeholder = "Your message" })
+                    @Html.ValidationMessageFor(m => m.Message)
+
+                </div>
+
+            </fieldset>
+            <div class="">
+                <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in">
+            </div>
+        }
+        }
+        else
+        {
+        <p> Thank you for contacting us. We’ll be in touch soon! </p>
+    
+    }
+    
+ </main>

@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectsItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterLayout.cshtml";
+}
+
+
+<section class="mw7 center avenir">
+    <h2 class="baskerville fw1 ph3 ph0-l">@Umbraco.Field("projectsTitle")</h2>
+    <article class="bt bb b--black-10">
+
+            <div class="flex flex-column flex-row-ns">
+                <div class="w-100 w-60-ns pl3-ns">
+                    <h1 class="f3 fw1 baskerville mt0 lh-title">@Umbraco.Field("projectTitle")</h1>
+                    <p class="f6 f5-l lh-copy">
+                        @Umbraco.Field("projectContents")
+                    </p>
+                </div>
+            </div>
+
+    </article>
+</section>

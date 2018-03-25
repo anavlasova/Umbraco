@@ -1,0 +1,51 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+  <!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha256-ZT4HPpdCOt2lvDkXokHuhJfdOKSPFLzeAJik5U/Q+l4=" crossorigin="anonymous" />
+    
+  </head>
+<body style="background: #ccc;">
+	<div id="header-container">
+		<header class="wrapper clearfix">
+			
+			<nav role="navigation">
+                 @Umbraco.RenderMacro("mainNav")
+          </nav>
+		
+		</header>
+	</div>
+	<div id="main-container">
+		<div id="main" class="wrapper clearfix">
+			
+		</div> <!-- #main -->
+		<div class="container" style="background: white;">@RenderBody()</div>
+			
+	</div> <!-- #main-container -->
+	<div id="footer-container">
+		<footer class="wrapper">
+			<h3>@Umbraco.Field("footer")</h3>
+		</footer>
+	</div>
+
+</body>
+</html>
+

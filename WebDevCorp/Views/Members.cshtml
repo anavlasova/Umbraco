@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Members>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "MasterLayout.cshtml";
+}
+
+
+@{
+var memberService = ApplicationContext.Current.Services.MemberService;
+
+var activeMembers = memberService.GetMembersByGroup("Active");
+}
+
+
+
+    <h1 class="text-center f2 headlines">Active members</h1>
+    <div class="row">
+
+
+        @foreach (var member in activeMembers)
+        {
+            string fullPath = member.GetValue("photo").ToString();
+
+            string[] substrings = fullPath.Split(',');
+            string srcString = substrings[2];
+            string[] srcSubStrings = srcString.Split(':');
+            string srcPath = srcSubStrings[1].Replace("\"", "");
+            srcPath = srcPath.Replace("}", "");
+
+            <div class="col" style="padding: 30px;">
+                <div class="card" style="width: 30rem;">
+                    
+                    <img class="card-img-top mw-100" src="@srcPath"/>
+                    <div class="card-body">
+                        <h5 class="card-title">@member.Name</h5>
+                        <p class="card-text">Username: @member.Username</p>
+                        <p class="card-text"><i>Email: @member.Email</i></p>
+                        <strong>Skills:</strong>
+                        @{      
+                            String[] skills = member.GetValue("skills").ToString().Split(',');
+
+                            string skillString =
+                                string.Join(", ", from skill in skills select umbraco.library.GetPreValueAsString(Convert.ToInt32(skill)));
+
+                            <span>@skillString</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>

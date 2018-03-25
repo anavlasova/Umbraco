@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterLayout.cshtml";
+}
+
+
+<article class="athelas">
+	<div class="vh-90 dt w-100 tc white cover">
+		<div class="dtc v-mid">
+			<header class="white-70">
+				<h2 class="f2 fw1 ttu tracked mb2 lh-title headlines">Welcome to</h2>
+				<h2 class="f2 fw1 ttu tracked mb2 lh-title headlines">Aarhus</h2>
+				<h2 class="f2 fw1 ttu tracked mb2 lh-title headlines">Web Dev Corp</h2>
+			</header>
+			<blockquote class="ph0 mh0 measure f4 lh-copy center bw1">
+				@Umbraco.RenderMacro("listNwestProjects")
+			</blockquote>
+		</div>
+	</div>
+
+</article>

@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "MasterLayout.cshtml";
+}
+
+
+<article class="pa3 pt-5 pa6-ns bg-white">
+    <h1 class="f1 w-50 b lh-title headlines-color">@Umbraco.Field("articleTitle")</h1>
+    <hr class="bw2 headlines-color">
+    <img src="http://tachyons.io/img/space.jpg" class="w-100 f5 measure" alt="Photo of outer space">
+    <p class="measure lh-copy">@Html.Raw(@Umbraco.Field("articleContents", removeParagraphTags: true))</p>
+    <p class="f6 lh-copy mv0">Created by @Umbraco.Field("creatorName"), @Umbraco.Field("createDate")</p>
+</article>
